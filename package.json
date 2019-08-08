@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "live-server": "^1.2.1",
-    "meow": "^5.0.0"
+    "meow": "^5.0.0",
+    "showdown": "^1.9.0"
   }
 }

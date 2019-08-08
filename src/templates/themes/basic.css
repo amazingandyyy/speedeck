@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background: rgba(black, 10%);
+    font-size: 2rem;
+}
+
+div, p, h1, a {
+        /* outline: 1px solid red !important; */
+}
+
+a[id^="btn-"] {
+    cursor: pointer;
+}
+
+a#btn-next-page {
+    float: right;
+    text-decoration: none;
+    color: grey;
+}
+a#btn-last-page {
+    float: left;
+    text-decoration: none;
+    color: grey;
+}
+a#btn-fullscreen {
+    float: center;
+    text-decoration: none;
+    color: grey;
+}
+
+div#displayer {
+    background-color: white;
+    display: block;
+    text-align: center;
+    margin: auto;
+    outline: 1px solid grey;
+    padding: 50px;
+    width: auto;
+}

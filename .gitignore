@@ -3,3 +3,4 @@ node_modules
 lib
 demo
 src/.*
+npm-debug.log
