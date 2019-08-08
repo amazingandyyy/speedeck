@@ -2,14 +2,21 @@
   "name": "speedeck",
   "version": "0.0.1",
   "description": "Deck made speed.",
-  "main": "index.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "engineStrict": true,
+  "bin": {
+    "speedeck": "./lib/index.js"
+  },
   "scripts": {
     "test": "jest && npm run style",
     "test:watch": "jest --watchAll",
     "build": "babel src -d lib",
     "dev": "babel-watch src/index.js",
     "style": "eslint --fix src/",
-    "precommit": "npm test && npm version"
+    "precommit": "npm test && npm version",
+    "trial": "npm i -g"
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
@@ -23,5 +30,8 @@
     "eslint-config-google": "^0.13.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "meow": "^5.0.0"
   }
 }
