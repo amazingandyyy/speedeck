@@ -7,7 +7,6 @@ import build from './build'
 /**
  * This is just a main function
  */
-
 const cli = meow(`
   Usage
   $ speedeck <action>

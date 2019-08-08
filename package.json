@@ -13,9 +13,10 @@
     "test": "jest && npm run style",
     "test:watch": "jest --watchAll",
     "build": "babel src -d lib",
-    "dev": "babel-watch src/index.js",
+    "dev": "babel-watch src/up.js",
     "style": "eslint --fix src/",
-    "precommit": "npm test && npm version"
+    "precommit": "npm test && npm version",
+    "serve": "http-server ./src/.cache.decks"
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
@@ -26,11 +27,11 @@
     "babel-jest": "^24.8.0",
     "babel-watch": "^7.0.0",
     "eslint": "^5.16.0",
-    "eslint-config-google": "^0.13.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "meow": "^5.0.0"
   }
 }

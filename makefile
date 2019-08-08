@@ -10,3 +10,9 @@ build:
 install-local: build
 	$(NPM) rm -g speedeck && $(NPM) i -g
 	rm -rf demo/**
+
+dev:
+	$(NPM) run dev
+
+serve:
+	$(NPM) run serve

@@ -1,5 +1,5 @@
+import path from 'path'
 const exec = require('child_process').exec
-const path = require('path')
 
 const init = (flags) => {
   const {src} = flags
