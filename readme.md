@@ -10,7 +10,7 @@ Deck Made Speed
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
    <a href="https://circleci.com/gh/amazingandyyy/speedeck">
-      <img src="https://circleci.com/gh/amazingandyyy/speedeck.svg?style=svg" />
+      <img src="https://circleci.com/gh/amazingandyyy/speedeck/tree/master.svg?style=svg" />
    </a>
 </p>
 
