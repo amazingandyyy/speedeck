@@ -16,7 +16,7 @@
     "dev": "babel-watch src/up.js",
     "style": "eslint --fix src/",
     "precommit": "npm test && npm version",
-    "serve": "http-server ./src/.cache.decks"
+    "serve": "live-server ./src/.cache.decks"
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "jest": "^24.8.0"
   },
   "dependencies": {
-    "http-server": "^0.11.1",
+    "live-server": "^1.2.1",
     "meow": "^5.0.0"
   }
 }

@@ -9,6 +9,7 @@ const up = (flags) => {
   const content = require(`${srcFolderPath}/content`)
   const cacheFoler = path.resolve(__dirname, '.cache.decks')
   const {presentation, author} = content.default;
+  // TODO: don't just remove file
   exec(`rm -rf ${path.resolve(__dirname, '.cache.decks/**')}`)
   const cover = new Printer(path.join(cacheFoler, '00.html'))
   console.log(presentation.cover.title)
