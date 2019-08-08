@@ -15,8 +15,7 @@
     "build": "babel src -d lib",
     "dev": "babel-watch src/index.js",
     "style": "eslint --fix src/",
-    "precommit": "npm test && npm version",
-    "trial": "npm i -g"
+    "precommit": "npm test && npm version"
   },
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",

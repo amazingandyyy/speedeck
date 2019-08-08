@@ -1,5 +1,6 @@
 const up = (flags) => {
-  console.log('up', flags)
+  // const {src} = flags
+  // const src = dir?dir:'./decks'
 }
 
 export default up
