@@ -6,9 +6,6 @@ Deck Made Speed
 </p>
 
 <p align="center">
-   <a href="https://travis-ci.com/amazingandyyy/speedeck">
-      <img src="https://travis-ci.com/amazingandyyy/speedeck.svg?branch=master" />
-   </a>
    <a href="https://github.com/amazingandyyy/speedeck/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
