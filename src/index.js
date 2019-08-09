@@ -32,13 +32,14 @@ const cli = meow(`
 })
 
 const action = cli.input[0]
+const filePath = cli.input[1]
 const {flags} = cli
 switch (action) {
   case 'init':
     init(flags)
     break
   case 'up':
-    up(flags)
+    up(filePath)
     break
   case 'build':
     build(flags)

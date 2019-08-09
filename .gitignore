@@ -4,3 +4,4 @@ lib
 demo
 src/.*
 npm-debug.log
+.cache.*

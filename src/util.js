@@ -6,9 +6,6 @@ class Printer {
       flags: 'a' // 'a' means appending
     })
   }
-  start() {
-    this.logger.write(line)
-  }
   print(line){
     this.logger.write(line)
   }

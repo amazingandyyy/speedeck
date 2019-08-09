@@ -10,25 +10,23 @@ const reset = (path) => {
   exec(`rm -rf ${path}`)
   exec(`mkdir -p ${path}`)
 }
-const up = ({src, theme}) => {
-  theme = theme ? theme : 'basic';
-  const srcFolder = src?src:'decks';
-  const srcFolderPath = path.resolve(__dirname, srcFolder)
+const up = (filePath) => {
+  const theme = 'basic';
   const tempateFolderPath = path.resolve(__dirname, 'templates')
-  const cacheFoler = path.join(__dirname, '.cache.decks')
+  const cacheFoler = path.join('.cache.decks')
   reset(cacheFoler)
   exec(`cp -rf ${tempateFolderPath}/themes/${theme}.css ${cacheFoler}`)
   exec(`cp -rf ${tempateFolderPath}/speedeck.js ${cacheFoler}`)
   const converter = new showdown.Converter()
-  fs.readFile(`${srcFolderPath}/index.md`, 'utf8', (err, data) => {
+  fs.readFile(filePath, 'utf8', (err, data) => {
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')
     pages.forEach((content, i)=>{
-      const file = new Printer(path.join(cacheFoler, `${i}.html`))
+      const fileName = (i==0)?'index':i;
+      const file = new Printer(path.join(cacheFoler, `${fileName}.html`))
       file.print(`<html>
         <head>
           <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta property="og:type" content="website">
           <meta property="og:image" content="">
           <meta property="og:site_name" content="">
@@ -37,33 +35,22 @@ const up = ({src, theme}) => {
         </head>
         <body>
           <div id='displayer'>
-            ${content}
+            <div>${content}</div>
           </div>
-          <div>
-            <a id='btn-last-page' href='${i-1}.html'>last page</a>
-            <a id='btn-next-page' href='${i+1}.html'>next page</a>
-            <a id='btn-fullscreen' onclick='toggleFullScreen()'>full screen</a>
+          <div id='btn-container'>
+            <a class='btn' href='${(i-1<=0)?'index':i-1}.html'><<</a>
+            <a class='btn' href='${i+1}.html'>>></a>
+            <a class='btn' onclick='toggleFullScreen()'>full screen</a>
           </div>
           <script type="application/javascript" src='speedeck.js' />
         </body>
         </html>`)
       file.end()
-      console.log(i, 'done')
     })
+    
   });
-  // cover.print(`<html>
-  // <head>
-  //   <title>${presentation.cover.title}</title>
-  // </head>
-  // <body>
-  //   <h1>${presentation.cover.title}</h1>
-  //   <h3>${presentation.cover.subtitle}</h3>
-  //   <p>${presentation.cover.time}</p>
-  // </body>
-  // </html>`.trim())
-  // cover.end()
 }
 
-up({src: 'decks'})
+// up('/Users/andy.chen/projects/speedeck/src/decks/index.md')
 
 export default up
