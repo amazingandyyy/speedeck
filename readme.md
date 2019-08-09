@@ -1,10 +1,13 @@
 <h1 align="center">
-🏵️ Speedeck
+🏵️ Speedeck (deprecated)
 </h1>
 <p align="center">
 Deck Made Speed
 
 From markdown to presentation, zero config!
+
+migrated to https://github.com/amazingandyyy/next-deck
+
 </p>
 
 <p align="center">
