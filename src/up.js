@@ -10,15 +10,17 @@ const reset = (path) => {
   exec(`rm -rf ${path}`)
   exec(`mkdir -p ${path}`)
 }
-const up = (filePath) => {
+
+const up = ({target, output}) => {
   const theme = 'basic';
+  output = output?output:'.cache.decks';
   const tempateFolderPath = path.resolve(__dirname, 'templates')
-  const cacheFoler = path.join('.cache.decks')
+  const cacheFoler = path.join(output)
   reset(cacheFoler)
   exec(`cp -rf ${tempateFolderPath}/themes/${theme}.css ${cacheFoler}`)
   exec(`cp -rf ${tempateFolderPath}/speedeck.js ${cacheFoler}`)
   const converter = new showdown.Converter()
-  fs.readFile(filePath, 'utf8', (err, data) => {
+  fs.readFile(target, 'utf8', (err, data) => {
     const html = converter.makeHtml(data);
     const pages = html.split('<hr />')
     pages.forEach((content, i)=>{
@@ -47,7 +49,6 @@ const up = (filePath) => {
         </html>`)
       file.end()
     })
-    
   });
 }
 

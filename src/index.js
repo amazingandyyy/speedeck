@@ -15,19 +15,17 @@ const cli = meow(`
             build
 
   Options
-  --src, -S  src directory to read from
   --out, -O  output directory to generate to
 
   Examples
   $ speedeck init
-  $ speedeck up --src ./deck
-  ... available on localhost:8888
+  $ speedeck build my_presentation.md -o docs
 `, {
   flage: {
-    dir: {
+    output: {
       type: 'string',
-      alias: 'D',
-    },
+      alias: 'O',
+    }
   },
 })
 
@@ -39,10 +37,10 @@ switch (action) {
     init(flags)
     break
   case 'up':
-    up(filePath)
+    up({filePath, ...flags})
     break
   case 'build':
-    build(flags)
+    build({filePath, ...flags})
     break
   default:
     break
