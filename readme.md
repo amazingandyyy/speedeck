@@ -9,15 +9,21 @@ Deck Made Speed
    <a href="https://github.com/amazingandyyy/speedeck/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
-   <a href="https://circleci.com/gh/amazingandyyy/speedeck">
+   <!-- <a href="https://circleci.com/gh/amazingandyyy/speedeck">
       <img src="https://circleci.com/gh/amazingandyyy/speedeck/tree/master.svg?style=svg" />
-   </a>
+   </a> -->
 </p>
 
 ## Usage
 
-```js
-// pending
+```shell
+$ npm i -g speedeck
+$ speedeck --help
+$ speedeck build ./demo/index.md --output ./docs
+
+$ npm i -g serve
+$ serve ./docs
+# available on http://localhost:5000
 ```
 
 
