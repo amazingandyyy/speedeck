@@ -3,6 +3,8 @@
 </h1>
 <p align="center">
 Deck Made Speed
+
+From markdown to presentation, zero config!
 </p>
 
 <p align="center">
